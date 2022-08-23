@@ -36,7 +36,7 @@ const getMovies = (req, res) => {
     sqlValues.push(req.query.color);
 
     if (req.query.max_duration != null) {
-      sql += " where duration <= ?";
+      sql += " and duration <= ?";
       sqlValues.push(req.query.max_duration);
     }
   } else if (req.query.max_duration != null) {
